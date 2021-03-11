@@ -124,8 +124,46 @@ class Masterfile extends CI_Controller {
             );
         }
 
-        foreach($this->super_model->select_custom_where("pr_details","ver_date_needed!='' AND estimated_price!='0' ORDER BY ver_date_needed DESC") AS $ca){
-            $total_ep = $ca->quantity * $ca->estimated_price;
+      
+        
+/*        $delivered = array();
+        foreach($this->super_model->custom_query("SELECT pi.pr_details_id FROM po_dr_items pi INNER JOIN po_dr pd ON pi.dr_id = pd.dr_id WHERE pd.received='1'") AS $dr){
+            $delivered[] = $dr->pr_details_id;
+        }
+         $calendar = array();
+        foreach($this->super_model->custom_query("SELECT pr_details_id FROM pr_calendar") AS $cal){
+            $calendar[] = $cal->pr_details_id;
+        }
+
+        $pending=array();
+        foreach($calendar AS $cl){
+            foreach($delivered AS $dl){
+                if($cl != $dl){
+                    $pending[]= $cl;
+                }
+            }
+        }
+
+       $result= array_unique($pending);
+       foreach($result AS $res){
+        $pr_id= $this->super_model->select_column_where("pr_details","pr_id","pr_details_id",$res);
+            $data['dash_calendar'][] = array(
+                'purpose'=>$this->super_model->select_column_where("pr_head","purpose","pr_id",$pr_id),
+                'enduse'=>$this->super_model->select_column_where("pr_head","enduse","pr_id",$pr_id),
+                'site_pr'=>$this->super_model->select_column_where("pr_details","add_remarks","pr_details_id",$res),
+                'requestor'=>$this->super_model->select_column_where("pr_head","requestor","pr_id",$pr_id),
+                'qty'=>$this->super_model->select_column_where("pr_details","quantity","pr_details_id",$res),
+                'uom'=>$this->super_model->select_column_where("pr_details","uom","pr_details_id",$res),
+                'description'=>$this->super_model->select_column_where("pr_details","item_description","pr_details_id",$res),
+                'status'=>'',
+            );
+       }*/
+/*
+        $count_calendar = $this->super_model->count_rows("pr_calendar");
+        if($count_calendar!=0){
+        foreach($this->super_model->select_custom_where("pr_calendar","ver_date_needed!='' AND estimated_price!='0' ORDER BY ver_date_needed DESC") AS $ca){
+            $quantity=$this->super_model->select_column_where("pr_details","quantity","pr_details_id",$ca->pr_details_id);
+            $total_ep = $quantity * $ca->estimated_price;
             $total_array[] = $total_ep;
             $total_disp = array_sum($total_array);
             $data['total_disp']=$total_disp;
@@ -134,14 +172,18 @@ class Masterfile extends CI_Controller {
             $data['dash_calendar'][] =  array(
                 'ver_date_needed'=>$ca->ver_date_needed,
                 'pr_no'=>$this->super_model->select_column_where("pr_head","pr_no","pr_id",$ca->pr_id),
-                'description'=>$ca->item_description,
-                'quantity'=>$ca->quantity,
+                'description'=>$this->super_model->select_column_where("pr_details","item_description","pr_details_id",$ca->pr_details_id),
+                'quantity'=>$quantity,
                 'estimated_price'=>$ca->estimated_price,
                 'total_ep'=>$total_ep,
                 'served'=>$served
 
             );
-        }
+            }
+        }else{
+            $data['dash_calendar']=array();
+            $data['total_disp']=0.00;
+        }*/
 
 /*
         foreach($this->super_model->custom_query("SELECT ph.date_prepared, ph.pr_id, ph.pr_no, pd.item_description, pd.pr_details_id, pd.quantity FROM pr_head ph INNER JOIN pr_details pd ON ph.pr_id = pd.pr_id WHERE saved='1' AND pd.cancelled = '0' AND ph.cancelled='0'") AS $pr){
@@ -530,6 +572,67 @@ class Masterfile extends CI_Controller {
                 window.location ='".base_url()."masterfile/company_list'; </script>";
         }
     }
+    public function proj_activity_list(){
+        $this->load->view('template/header');
+        $this->load->view('template/navbar');
+        $data['proj_act']=$this->super_model->select_all_order_by('project_activity', 'proj_activity', 'ASC');
+        $this->load->view('masterfile/proj_activity_list',$data);
+        $this->load->view('template/footer');
+    }
+
+    public function insert_proj_activity(){
+        $proj_activity = trim($this->input->post('proj_activity')," ");
+        $c_remarks = trim($this->input->post('c_remarks')," ");
+        $duration = trim($this->input->post('duration')," ");
+        $target_start_date = trim($this->input->post('target_start_date')," ");
+        $target_completion = trim($this->input->post('target_completion')," ");
+        $actual_start = trim($this->input->post('actual_start')," ");
+        $actual_completion = trim($this->input->post('actual_completion')," ");
+        $est_total_materials = trim($this->input->post('est_total_materials')," ");
+        $status = trim($this->input->post('status')," ");
+        $data = array(
+            'proj_activity'=>$proj_activity,
+            'c_remarks'=>$c_remarks,
+            'duration'=>$duration,
+            'target_start_date'=>$target_start_date,
+            'target_completion'=>$target_completion,
+            'actual_start'=>$actual_start,
+            'actual_completion'=>$actual_completion,
+            'est_total_materials'=>$est_total_materials,
+            'status'=>$status,
+        );
+        if($this->super_model->insert_into("project_activity", $data)){
+            echo "<script>alert('Successfully Added!'); window.location ='".base_url()."masterfile/proj_activity_list'; </script>";
+        }
+    }
+
+    public function update_proj_activity(){
+        $this->load->view('template/header');
+        $data['id']=$this->uri->segment(3);
+        $id=$this->uri->segment(3);
+        $data['proj_act'] = $this->super_model->select_row_where('project_activity', 'proj_act_id', $id);
+        $this->load->view('masterfile/update_proj_activity',$data);
+        $this->load->view('template/footer');
+    }
+
+    public function edit_proj_act(){
+        $data = array(
+            'proj_activity'=>$this->input->post('proj_activity'),
+            'c_remarks'=>$this->input->post('c_remarks'),
+            'duration'=>$this->input->post('duration'),
+            'target_start_date'=>$this->input->post('target_start_date'),
+            'target_completion'=>$this->input->post('target_completion'),
+            'actual_start'=>$this->input->post('actual_start'),
+            'actual_completion'=>$this->input->post('actual_completion'),
+            'est_total_materials'=>$this->input->post('est_total_materials'),
+            'status'=>$this->input->post('status'),
+        );
+        $proj_act_id = $this->input->post('proj_act_id');
+        if($this->super_model->update_where('project_activity', $data, 'proj_act_id', $proj_act_id)){
+            echo "<script>alert('Successfully Updated!'); window.opener.location.reload(); window.close();</script>";
+        }
+    }
+
     public function filter_pending(){
         $this->load->view('template/header');
         $this->load->view('template/navbar');
@@ -584,11 +687,12 @@ class Masterfile extends CI_Controller {
             );
         }
 
-        $count_calendar = $this->super_model->count_custom_where("pr_details","ver_date_needed BETWEEN '$filter_date_from' AND '$filter_date_to' AND estimated_price!='0' ORDER BY ver_date_needed DESC");
+        $count_calendar = $this->super_model->count_custom_where("pr_calendar","ver_date_needed BETWEEN '$filter_date_from' AND '$filter_date_to' AND estimated_price!='0' ORDER BY ver_date_needed DESC");
         if($count_calendar!=0){
-            foreach($this->super_model->select_custom_where("pr_details","ver_date_needed BETWEEN '$filter_date_from' AND '$filter_date_to' AND estimated_price!='0' ORDER BY ver_date_needed DESC") AS $ca){
+            foreach($this->super_model->select_custom_where("pr_calendar","ver_date_needed BETWEEN '$filter_date_from' AND '$filter_date_to' AND estimated_price!='0' ORDER BY ver_date_needed DESC") AS $ca){
                 //$estimated_price = $this->super_model->select_column_custom_where('pr_details','estimated_price',"pr_details_id='$ca->pr_details_id'");
-                $total_ep = $ca->quantity * $ca->estimated_price;
+                $quantity=$this->super_model->select_column_where("pr_details","quantity","pr_details_id",$ca->pr_details_id);
+                $total_ep = $quantity * $ca->estimated_price;
                 $total_array[] = $total_ep;
                 $total_disp = array_sum($total_array);
                 $data['total_disp']=$total_disp;
@@ -600,8 +704,8 @@ class Masterfile extends CI_Controller {
                 $data['dash_calendar'][] =  array(
                     'ver_date_needed'=>$ca->ver_date_needed,
                     'pr_no'=>$this->super_model->select_column_where("pr_head","pr_no","pr_id",$ca->pr_id),
-                    'description'=>$ca->item_description,
-                    'quantity'=>$ca->quantity,
+                    'description'=>$this->super_model->select_column_where("pr_details","item_description","pr_details_id",$ca->pr_details_id),
+                    'quantity'=>$quantity,
                     'estimated_price'=>$ca->estimated_price,
                     'total_ep'=>$total_ep,
                     'served'=>$served
@@ -609,6 +713,9 @@ class Masterfile extends CI_Controller {
                 );
             }
         }else{
+            $data['filt']=$filter_date_from." - ".$filter_date_to;
+            $data['filter_date_from']=$filter_date_from;
+            $data['filter_date_to']=$filter_date_to;
             $data['dash_calendar']=array();
             $data['total_disp']=0.00;
         }

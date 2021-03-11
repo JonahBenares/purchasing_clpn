@@ -38,10 +38,9 @@
             </div>
         </div>
     </div>
-    <!-- Breadcome End-->                  
     <div class="welcome-adminpro-area">
         <div class="container-fluid">
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
                     <div class="dashone-adminprowrap shadow-reset mg-b-30 pulse" style="height: 320px;max-height: 320px " >
                         <div class="dash-adminpro-project-title">
@@ -52,7 +51,6 @@
                                         <button type="button" class="btn btn-success btn-md btn-custon-three" data-toggle="modal" data-target="#filter_pending" title="Filter">
                                             <span class="fa fa-filter"></span>
                                         </button>
-                                        <button class="btn btn-warning btn-custon-three">Total : <b><?php echo number_format($total_disp,2); ?></b></button>    
                                     </div>
                                     
                                 </b>
@@ -90,35 +88,38 @@
                             </h2>                            
                         </div>
                         <?php if(!empty($filt)){ ?>     
-                        <span class='btn btn-success disabled'>Filter Applied</span><?php echo $filt ?>, <a href="<?php echo base_url(); ?>index.php/masterfile/dashboard" class='remove_filter alert-link pull-right btn'><span class="fa fa-times"></span></a>                    
+                        <span class='btn btn-success disabled'>Filter Applied</span><?php echo $filt ?>, <a href="<?php echo base_url(); ?>index.php/masterfile/dashboard/<?php echo $filter_date_from; ?>/<?php echo $filter_date_to; ?>" class='remove_filter alert-link pull-right btn'><span class="fa fa-times"></span></a>                    
                         <?php } ?>  
                         <div style="overflow-y: scroll;height: 220px;max-height: 220px  ">
-                            <!-- loop here -->
                             <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                                 <thead>
                                     <tr>
-                                        <th>Date Needed</th>
-                                        <th>PR No</th>
-                                        <th>Item Desc</th>
-                                        <th>Qty</th>
-                                        <th>Estimated Price</th>
-                                        <th>Total Est. Price</th>
+                                        <th>Purpose</th>
+                                        <th>End Use</th>
+                                        <th>Site Pr No</th>
+                                        <th>Requestor</th>
+                                        <th>QTY</th>
+                                        <th>UOM</th>
+                                        <th>Description</th>
+                                       
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <?php 
                                     foreach($dash_calendar AS $ca){ 
-                                    if($ca['served']==0){
+                                  
                                 ?>
                                     <tr>
-                                        <td><?php echo $ca['ver_date_needed']; ?></td>
-                                        <td><?php echo $ca['pr_no']; ?></td>
+                                        <td><?php echo $ca['purpose']; ?></td>
+                                        <td><?php echo $ca['enduse']; ?></td>
+                                        <td><?php echo $ca['site_pr']; ?></td>
+                                        <td><?php echo $ca['requestor']; ?></td>
+                                        <td><?php echo $ca['qty']; ?></td>
+                                        <td><?php echo $ca['uom']; ?></td>
                                         <td><?php echo $ca['description']; ?></td>
-                                        <td><?php echo $ca['quantity']; ?></td>
-                                        <td><?php echo $ca['estimated_price']; ?></td>
-                                        <td><?php echo number_format($ca['total_ep'],2); ?></td>
+                                       
                                     </tr> 
-                                <?php } } ?>      
+                                <?php  } ?>      
                                 </tbody>
                             </table>
                                   
@@ -126,7 +127,7 @@
 
                     </div>
                 </div>
-            </div>
+            </div> -->
             <div class="row">
                 <!-- pr and for te -->
                 <div class="col-lg-6 col-md-4 col-sm-12 col-xs-12 ">

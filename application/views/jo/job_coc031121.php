@@ -94,7 +94,7 @@
     		<div  id="prnt_btn">
 	    		<center>
 			    	<div class="btn-group">
-						<a href="<?php echo base_url(); ?>jo/jo_list" class="btn btn-success btn-md p-l-25 p-r-25"><span class="fa fa-arrow-left"></span> Back</a>
+						<a href="" onclick="return quitBox('quit');" class="btn btn-success btn-md p-l-25 p-r-25"><span class="fa fa-arrow-left"></span> Back</a>
 						<?php //if($revised==0){ ?>
 							<a  href='<?php echo base_url(); ?>jo/job_order_rev/<?php echo $jo_id; ?>' onclick="return confirm('Are you sure you want to revise JO?')" class="btn btn-info btn-md p-l-25 p-r-25"><span class="fa fa-pencil"></span> Revise <u><b>JO</b></u></a>
 						<?php //} ?>
@@ -105,7 +105,7 @@
 						<a  href="<?php echo base_url(); ?>jo/job_coc/<?php echo $jo_id; ?>" class="btn btn-warning btn-md p-l-25 p-r-25"><span class="fa fa-print"></span> Print <b>COC</b></a>
 						
 					</div>
-					<h4 class="text-white"><b>JOB ORDER</b></h4>
+					<h4 class="text-white"><b>CERTIFICATE OF COMPLETION</b></h4>
 					<p class="text-white">Instructions: When printing JOB ORDER make sure the following options are set correctly -- <u>Browser</u>: Chrome, <u>Layout</u>: Portrait, <u>Paper Size</u>: A4, <u>Margin</u> : Default, <u>Scale</u>: 100</p>
 				</center>
 			</div>
@@ -157,7 +157,7 @@
 			    			</center>
 		    			</td>
 		    		</tr>
-		    		<tr><td colspan="20" align="center"><h4><b>JOB ORDER</b></h4></td></tr>
+		    		<tr><td colspan="20" align="center"><h4><b>CERTIFICATE OF COMPLETION</b></h4></td></tr>
 		    		<tr>
 		    			<td class="f13" colspan="3" style="vertical-align:top">TO:</td>
 		    			<td class="f13" colspan="10" align="left">
@@ -191,7 +191,7 @@
 		    			<td class="f13 bor-btm" colspan="7"><?php echo date("F d, Y",strtotime($start_of_work));?></td>
 		    			<td class="f13" colspan="1"></td>
 		    			<td class="f13" colspan="3">JO. No:</td>
-		    			<td class="f13 bor-btm" colspan="5"><?php echo $jo_no."-".COMPANY.(($revision_no!=0) ? ".r".$revision_no : ""); ?></td>
+		    			<td class="f13 bor-btm" colspan="5"><?php echo $jo_no."-".COMPANY; ?></td>
 		    		</tr>	
 		    		<!-- <tr>
 		    			<td class="f13" colspan="4">Completion of Work:</td>
@@ -228,7 +228,7 @@
 		    						<td class="f13" align="right"><?php echo number_format($det->total_cost,2); ?></td>
 		    					</tr>
 		    					<tr><td colspan="5" class="p-5"></td></tr>
-		    					<?php } ?>
+		    				<?php } ?>
 		    					<tr>
 		    						<td class="f13 p-l-5" align="left"></td>
 		    						<td class="f13" align="center"></td>
@@ -269,7 +269,7 @@
 		    			<td class="f13" colspan="11" align="left" style="padding-left: 5px">
 		    				<b>Terms and Conditions:</b><br>
 		    				<?php foreach($terms AS $trm){ 
-		    					echo nl2br($trm->terms) . "<br>";
+		    					echo nl2br($trm->terms)."<br>";
 		    				} ?>
 		    			</td>
 		    			<td colspan="9"></td>
@@ -348,42 +348,7 @@
 		    			<td class="f13" colspan="1" align="center"></td>
 		    		</tr>   -->
 		    		<tr><td class="f13" colspan="20" align="center"><br><br></td></tr>  
-		    		<tr><td class="f13" colspan="20" align="center"><br></td></tr>    	
-		    		<tr>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 " colspan="4" align="center">Work Completion Verified by:</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center"></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 " colspan="4" align="center"></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 " colspan="4" align="center"></td>
-		    		</tr>   
-		    		<tr>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13  bor-btm" colspan="4" align="center"><br></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center"><br></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center"><br></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center"><br></td>
-		    		</tr>   
-		    		<tr>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center">
-		    				<?php echo $verified_by;?>
-		    			</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center"></td>
-		    			<td class="f13" colspan="1" align="center"></td></td>
-
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="3" align="center"></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 " colspan="4" align="center"></td>
-		    		</tr>     	
-		    		<tr><td class="f13" colspan="20" align="center"><br></td></tr>
+		    		
 		    	</table>		    
 	    	</div>
     	</form>

@@ -29,6 +29,7 @@
                                 <a href="<?php echo base_url(); ?>vendors/vendor_list" class="dropdown-item">Vendors</a>
                                 <a href="<?php echo base_url(); ?>masterfile/employee_list" class="dropdown-item">Employee</a>
                                 <a href="<?php echo base_url(); ?>masterfile/unit_list" class="dropdown-item">Unit</a>
+                                <a href="<?php echo base_url(); ?>masterfile/proj_activity_list" class="dropdown-item">Project/Activity</a>
                             </div>
                         </li>
 
@@ -141,7 +142,8 @@
                                 <a class="dropdown-item" data-toggle="modal" data-target="#po_modal">PO Summary</a>
                                 <a class="dropdown-item" data-toggle="modal" data-target="#unserved_modal">Unserved Report</a>
                                 <a class="dropdown-item" data-toggle="modal" data-target="#weekly_recom">Summary of Weekly Recom</a>
-                                <a href="<?php echo base_url(); ?>reports/purch_calendar" class="dropdown-item">Calendar</a>
+                                <a class="dropdown-item" href="<?php echo base_url(); ?>reports/pending_pr" >Pending PR</a>
+                                <a class="dropdown-item" data-toggle="modal" data-target="#purch_calendar">Calendar</a>
                             </div>
                         </li> 
 
@@ -272,6 +274,39 @@
                                     <small>Date To:</small>
                                     <input placeholder="Date To" class="form-control" name="date_recom_to" type="text" onfocus="(this.type='date')" id="date">
                                 </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn btn-primary btn-block" value='Proceed'>
+                            <!--<a href="<?php echo base_url(); ?>index.php/reports/sum_weekly_recom"  class="btn btn-primary " target="_blank">Proceed</a>-->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="purch_calendar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Calendar
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </h5>                            
+                    </div>
+                    <form method='POST' action="<?php echo base_url(); ?>reports/generate_purch_calendar_report" target='_blank'>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                Choose Year:
+                                <select class="form-control" name="year">
+                                    <option value='' selected="selected">-Select Year-</option>
+                                    <?php
+                                    $curr_year = date('Y'); 
+                                    for($x=2021;$x<=$curr_year;$x++){ ?>
+                                        <option value="<?php echo $x; ?>"><?php echo $x; ?></option>
+                                    <?php } ?>
+                                </select>
                             </div>
                         </div>
                         <div class="modal-footer">
