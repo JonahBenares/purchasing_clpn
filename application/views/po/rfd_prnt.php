@@ -421,10 +421,10 @@
 		    		<tr>
 		    			<td colspan="3"><b class="nomarg">Prepared by:</b></td>
 		    			<td colspan="3"><b>Reviewed by:</b></td>
-		    			<td colspan="3"><b>Noted by:</b></td>
 		    			<td colspan="3"><b>Endorsed by:</b></td>
 		    			<td colspan="3"><b>Approved by:</b></td>
-		    			<td colspan="5"><b>Payment Released by:</b></td>
+		    			<td colspan="4"><b>Payment Released by:</b></td>
+		    			<td colspan="5"><b >Payment Received by:</b></td>
 		    		</tr>	
 		    		<tr><td class="f13" colspan="20" align="center"><br></td></tr>	
 		    		<tr>
@@ -446,25 +446,6 @@
 		    			
 		    			</b>
 		    			</td>
-
-		    			<td colspan="3">
-		    			<b>
-		    				<?php if($rows_dr==0){ ?>
-		    			<select name='noted' class="select-des emphasis"  style="width:90%">
-		    				
-			    			<option value='' selected>-Select Employee-</option>
-			    			<?php foreach($employee AS $emp){ ?>
-			    				<option value='<?php echo $emp->employee_id; ?>'><?php echo $emp->employee_name; ?></option>
-			    			<?php } ?>
-			    		</select>
-			    		<?php 	
-			    			} else { 
-			    				echo $noted; 
-			    			} ?>
-		    			
-		    			</b>
-		    			</td>
-
 		    			<td colspan="3">
 		    			<b>
 		    			<?php if($rows_dr==0){ ?>
@@ -496,7 +477,7 @@
 		    			</b>
 		    			</td>
 
-		    			<td colspan="5">
+		    			<td colspan="4">
 		    			<b>
 		    				<?php if($rows_dr==0){ ?>
 		    			<select name='released' class="select-des emphasis"  style="width:90%">
@@ -513,14 +494,6 @@
 		    			
 		    			</b>
 		    			</td>
-		    		</tr>	    		
-		    		<tr><td class="f13" colspan="20" align="center"><br></td></tr>		
-		    		<tr>
-		    			<td colspan="5"><b >Payment Received by:</b></td>
-		    			<td colspan="15"></td>
-		    		</tr>	
-		    		<tr><td class="f13" colspan="20" align="center"><br></td></tr>	
-		    		<tr>
 		    			<td colspan="5">
 		    				<b>
 		    				<?php if($rows_dr==0){ ?>
@@ -538,8 +511,8 @@
 			    			
 			    			</b>
 		    			</td>
-		    			<td colspan="15"></td>
-		    		</tr>	
+		    		</tr>	    		
+		    		<tr><td class="f13" colspan="20" align="center"><br></td></tr>	
 		    	</table>		    
 	    	</div>
 	    	<input type='hidden' name='po_type' value='<?php echo $po_type; ?>'>

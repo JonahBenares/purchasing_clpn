@@ -1419,7 +1419,7 @@ class Po extends CI_Controller {
             'checked_by'=>$this->input->post('checked'),
             'endorsed_by'=>$this->input->post('endorsed'),
             'approved_by'=>$this->input->post('approved'),
-            'noted_by'=>$this->input->post('noted'),
+            //'noted_by'=>$this->input->post('noted'),
             'received_by'=>$this->input->post('received'),
             'released_by'=>$this->input->post('released'),
             'rfd_type'=>$this->input->post('po_type'),
