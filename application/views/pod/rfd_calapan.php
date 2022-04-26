@@ -383,7 +383,7 @@
 		    			<td colspan="3"><b>Checked by:</b></td>
 		    			<td colspan="3"><b>Noted by:</b></td>
 		    			<td colspan="3"><b>Approved by:</b></td>
-		    			<td colspan="3"><b>Request Initiated	 by:</b></td>
+		    			<td colspan="3"><b>Request Initiated by:</b></td>
 		    			<td colspan="5"><b>Payment Received by:</b></td>
 		    		</tr>	
 		    		<tr><td class="f13" colspan="20" align="center"><br></td></tr>	

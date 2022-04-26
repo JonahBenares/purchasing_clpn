@@ -196,6 +196,7 @@ class Pod extends CI_Controller {
             $data['recommended']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $h->recommended_by);
             $data['approved']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $h->approved_by);
             $data['checked']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $h->checked_by);
+            $data['endorsed']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $h->endorsed_by);
         }
 /*
          $data['items'] = $this->super_model->select_row_where('po_items', 'po_id', $po_id);
@@ -288,6 +289,8 @@ class Pod extends CI_Controller {
             $data['approved']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $h->approved_by);
             $data['checked_id']=$h->checked_by;
             $data['checked']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $h->checked_by);
+            $data['endorsed_id']=$h->endorsed_by;
+            $data['endorsed']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $h->endorsed_by);
         }
 /*
          $data['items'] = $this->super_model->select_row_where('po_items', 'po_id', $po_id);
@@ -456,7 +459,7 @@ class Pod extends CI_Controller {
             }
         }else {
             foreach($this->super_model->select_row_where("po_items", "po_id", $po_id) AS $items){
-                $currency = $this->input->post('currency'.$x);
+                //$currency = $this->input->post('currency'.$x);
                 $total = $items->delivered_quantity*$items->unit_price;
                 $data['items'][]= array(
                     'pr_details_id'=>$items->pr_details_id,
@@ -585,10 +588,10 @@ class Pod extends CI_Controller {
                 'packing_fee'=>$this->input->post('packing'),
                 'vat'=>$this->input->post('vat'),
                 'vat_percent'=>$this->input->post('vat_percent'),
+                'endorsed_by'=>$this->input->post('endorsed'),
                 'checked_by'=>$this->input->post('checked'),
                 'recommended_by'=>$this->input->post('recommended'),
                 'approved_by'=>$this->input->post('approved'),
-                'checked_by'=>$this->input->post('checked'),
                 'saved'=>1
             );
 
@@ -602,9 +605,10 @@ class Pod extends CI_Controller {
                 'packing_fee'=>$this->input->post('packing'),
                 'vat'=>$this->input->post('vat'),
                 'vat_percent'=>$this->input->post('vat_percent'),
+                'endorsed_by'=>$this->input->post('endorsed'),
                 'checked_by'=>$this->input->post('checked'),
                 'approved_by'=>$this->input->post('approved'),
-                'checked_by'=>$this->input->post('checked'),
+                'recommended_by'=>$this->input->post('recommended'),
                 'saved'=>0,
                 'draft'=>1
             );
@@ -668,6 +672,7 @@ class Pod extends CI_Controller {
                 'packing_fee'=>$this->input->post('packing'),
                 'vat'=>$this->input->post('vat'),
                 'vat_percent'=>$this->input->post('vat_percent'),
+                'endorsed_by'=>$this->input->post('endorsed'),
                 'checked_by'=>$this->input->post('checked'),
                 'recommended_by'=>$this->input->post('recommended'),
                 'approved_by'=>$this->input->post('approved'),
@@ -686,6 +691,7 @@ class Pod extends CI_Controller {
                 'packing_fee'=>$this->input->post('packing'),
                 'vat'=>$this->input->post('vat'),
                 'vat_percent'=>$this->input->post('vat_percent'),
+                'endorsed_by'=>$this->input->post('endorsed'),
                 'checked_by'=>$this->input->post('checked'),
                 'recommended_by'=>$this->input->post('recommended'),
                 'approved_by'=>$this->input->post('approved'),
@@ -884,6 +890,7 @@ class Pod extends CI_Controller {
             $data['notes']=$r->notes;
             
             $data['checked']=$this->super_model->select_column_where("employees", "employee_name", "employee_id", $r->checked_by);
+            $data['released']=$this->super_model->select_column_where("employees", "employee_name", "employee_id", $r->released_by);
             $data['endorsed']=$this->super_model->select_column_where("employees", "employee_name", "employee_id", $r->endorsed_by);
             $data['approved']=$this->super_model->select_column_where("employees", "employee_name", "employee_id", $r->approved_by);
             $data['noted']=$this->super_model->select_column_where("employees", "employee_name", "employee_id", $r->noted_by);
@@ -913,6 +920,7 @@ class Pod extends CI_Controller {
             'cash_check'=>$this->input->post('cash'),
             'bank_no'=>$this->input->post('bank_no'),
             'total_amount'=>$this->input->post('total_amount'),
+            'released_by'=>$this->input->post('released'),
             'checked_by'=>$this->input->post('checked'),
             'endorsed_by'=>$this->input->post('endorsed'),
             'approved_by'=>$this->input->post('approved'),
@@ -1030,6 +1038,7 @@ class Pod extends CI_Controller {
             $data['recommended']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $h->recommended_by);
             $data['approved']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $h->approved_by);
             $data['checked']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $h->checked_by);
+            $data['endorsed']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $h->endorsed_by);
         }
 
         $data['items'] = $this->super_model->select_row_where('po_items', 'po_id', $po_id);
@@ -1245,6 +1254,7 @@ class Pod extends CI_Controller {
                 "vat_percent"=>$head->vat_percent,
                 "approved_by"=>$head->approved_by,
                 "checked_by"=>$head->checked_by,
+                "endorsed_by"=>$head->endorsed_by,
                 "saved"=>$head->saved,
                 "done_po"=>$head->done_po,
                 "date_revised"=>$this->input->post('approve_date'),
