@@ -589,59 +589,132 @@
 		    		
 		    		<tr><td colspan="20"><br></td></tr>
 		    		<tr>
-		    			<td colspan="1"></td>
-		    			<td colspan="3"><b>Prepared by:</b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="3"><b>Endorsed by:</b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="3"><b>Cleared by:</b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="3"><b>Recommended by:</b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="2"><b>Approved by:</b></td>
-		    			<td colspan="1"></td>
+		    			<td colspan="20">
+		    				<table class="table-bordesred" width="100%">
+					    		<tr>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="9%"><br></td>
+					    			<td width="1%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="9%"><br></td>
+					    			<td width="1%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="9%"><br></td>
+					    			<td width="1%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="9%"><br></td>
+					    			<td width="1%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    		</tr>
+					    		<tr>
+					    			<!-- <td colspan="1"></td> -->
+					    			<td colspan="3"><b>Prepared by:</b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b>Endorsed by:</b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b>Confirmed by:</b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b>Recommended by:</b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="4"><b>Approved by:</b></td>
+					    		</tr>
+					    		<tr>
+					    			<!-- <td colspan="1"></td> -->
+					    			<td colspan="3"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="4"><b></b></td>
+					    		</tr>
+					    		<tr>
+					    			<!-- <td colspan="1"></td> -->
+					    			<td colspan="3" class="bor-btm"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3" class="bor-btm"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3" class="bor-btm"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3" class="bor-btm"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="4" class="bor-btm"><b><br></b></td>
+					    		</tr>
+					    		<tr>
+					    			<!-- <td colspan="1"></td> -->
+					    			<td style="vertical-align: top;font-size: 11px" colspan="3" class=""><b><?php echo $prepared; ?></b></td>
+					    			<td style="vertical-align: top;font-size: 11px" colspan="1"></td>
+					    			<td style="vertical-align: top;font-size: 11px" colspan="3" class=""><b>
+						    			<?php if($saved==0){ ?>
+						    			<select name='endorsed' class="select-des emphasis" style="width: 100%" >
+							    			<option value=''>-Select-</option>
+							    			<?php foreach($employee AS $emp){ ?>
+							    			<option value='<?php echo $emp->employee_id; ?>'><?php echo $emp->employee_name; ?></option>
+							    			<?php } ?>
+						    			</select></b></td>
+						    			<?php }else { ?>
+						    			<?php echo $endorsed; } ?>
+					    			<td style="vertical-align: top;font-size: 11px" colspan="1"></td>
+					    			<td style="vertical-align: top;font-size: 11px" colspan="3" class=""><b>
+						    			<?php if($saved==0){ ?>
+						    			<select name='checked' class="select-des emphasis" style="width: 100%" >
+							    			<option value=''>-Select-</option>
+							    			<?php foreach($employee AS $emp){ ?>
+							    			<option value='<?php echo $emp->employee_id; ?>'><?php echo $emp->employee_name; ?></option>
+							    			<?php } ?>
+						    			</select></b></td>
+						    			<?php }else { ?>
+						    			<?php echo $checked; } ?>
+						    		<td style="vertical-align: top;font-size: 11px" colspan="1"></td>
+					    			<td style="vertical-align: top;font-size: 11px" colspan="3" class=""><b>
+						    			<?php if($saved==0){ ?>
+						    			<select name='recommended' class="select-des emphasis" style="width: 100%" >
+							    			<option value=''>-Select-</option>
+							    			<?php foreach($employee AS $emp){ ?>
+							    			<option value='<?php echo $emp->employee_id; ?>'><?php echo $emp->employee_name; ?></option>
+							    			<?php } ?>
+						    			</select></b></td>
+						    			<?php }else { ?>
+						    			<?php echo $recommended; } ?>
+					    			<td style="vertical-align: top;font-size: 11px" colspan="1"></td>
+					    			<td style="vertical-align: top;font-size: 11px" colspan="4" class=""><b>
+						    			<?php if($saved==0){ ?>
+						    			<select name='approved' class="select-des emphasis" style="width: 100%" required>
+							    			<option value=''>-Select-</option>
+							    			<?php foreach($employee AS $emp){ ?>
+							    			<option value='<?php echo $emp->employee_id; ?>'><?php echo $emp->employee_name; ?></option>
+							    			<?php } ?>
+						    			</select></b></td>
+						    			<?php }else { ?>
+						    			<?php echo $approved; } ?>
+					    		</tr>
+					    		<tr><td colspan="20"><br></td></tr>
+					    		<tr>
+					    			<td colspan="4"></td>
+					    			<td colspan="2"><b>Conforme:</b></td>
+					    			<td colspan="8" class="bor-btm"><b></b></td>
+					    			<td colspan="6"></td>
+					    		</tr>
+					    		<tr>
+					    			<td colspan="4"></td>
+					    			<td colspan="2"><b></b></td>
+					    			<td colspan="8" align="center"><b>Supplier's Signature Over Printed Name</b></td>
+					    			<td colspan="6"></td>
+					    		</tr>
+					    		<tr><td colspan="20"><br></td></tr>
+					    		<tr><td colspan="20"><br></td></tr>
+					    	</table>
+		    			</td>
 		    		</tr>
-		    		<tr>
-		    			<td colspan="1"></td>
-		    			<td colspan="3" class="bor-btm"><b><br></b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="3" class="bor-btm"><b><br></b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="3" class="bor-btm"><b><br></b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="3" class="bor-btm"><b><br></b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="2" class="bor-btm"><b><br></b></td>
-		    			<td colspan="1"></td>
-		    		</tr>
-		    		<tr>
-		    			<td colspan="1"></td>
-		    			<td colspan="3"><b><?php echo $prepared; ?></b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="3"><b><?php echo $endorsed;?></b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="3"><b><?php echo $checked;?></b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="3"><b><?php echo $recommended;?></b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="2"><b><?php echo $approved;?></b></td>
-		    			<td colspan="1"></td>
-		    		</tr>
-		    		<tr><td colspan="20"><br></td></tr>
-		    		<tr>
-		    			<td colspan="4"></td>
-		    			<td colspan="2"><b>Conforme:</b></td>
-		    			<td colspan="8" class="bor-btm"><b></b></td>
-		    			<td colspan="6"></td>
-		    		</tr>
-		    		<tr>
-		    			<td colspan="4"></td>
-		    			<td colspan="2"><b></b></td>
-		    			<td colspan="8" align="center"><b>Supplier's Signature Over Printed Name</b></td>
-		    			<td colspan="6"></td>
-		    		</tr>
-		    		<tr><td colspan="20"><br></td></tr>
-		    		<tr><td colspan="20"><br></td></tr>
 		    	</table>	    
 	    	</div>
     	</form>

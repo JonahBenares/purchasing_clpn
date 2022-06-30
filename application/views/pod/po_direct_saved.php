@@ -247,8 +247,8 @@
 		    			<td colspan="" class="all-border" align="center"><b>Unit</b></td>
 		    			<td colspan="13" class="all-border" align="center"><b>Description</b></td>
 		    			<td colspan="2" class="all-border" align="center"><b>Unit Price</b></td>
-		    			<td colspan="2" class="all-border" align="center"><b>Currency</b></td>
-		    			<td colspan="2" class="all-border" align="center"><b>Total</b></td>
+		    			<td colspan="1" class="all-border" align="center"><b>Currency</b></td>
+		    			<td colspan="3" class="all-border" align="center"><b>Total</b></td>
 		    		</tr>
 		    		<?php 
 		    			$x=1;
@@ -265,7 +265,7 @@
 
 		    			<td colspan="" class="bor-right v-align" align="center"><b><<?php echo $it['uom']; ?></b></td>
 
-		    			<td colspan="12" class="bor-right v-align" align="left"><b class="nomarg"><?php echo $it['item'].", ".$CI->get_pn($it['pr_details_id']);?></b></td>
+		    			<td colspan="13" class="bor-right v-align" align="left"><b class="nomarg"><?php echo $it['item'].", ".$CI->get_pn($it['pr_details_id']);?></b></td>
 
 		    			<td colspan="2" class="bor-right v-align" align="center"><b><?php echo number_format($it['price'],2); ?></b></td>
 		    			<td width="10%" class="bor-right v-align" align="center">
@@ -295,7 +295,7 @@
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
-		    			<td colspan="12" class="bor-right" align="left">
+		    			<td colspan="13" class="bor-right" align="left">
 		    				<p class="nomarg"><br></p>
 		    			</td>
 		    			<td colspan="2" class="bor-right" align="center"><b></b></td>
@@ -307,7 +307,7 @@
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
-		    			<td colspan="12" class="bor-right" align="right">
+		    			<td colspan="13" class="bor-right" align="right">
 		    				<p class="nomarg">Shipping Cost</p>
 		    			</td>
 		    			<td colspan="2" class="bor-right" align="center"><b></b></td>
@@ -318,7 +318,7 @@
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
-		    			<td colspan="12" class="bor-right" align="right">
+		    			<td colspan="13" class="bor-right" align="right">
 		    				<p class="nomarg">Packing and Handling Fee</p>
 		    			</td>
 		    			<td colspan="2" class="bor-right" align="center"><b></b></td>
@@ -330,7 +330,7 @@
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
-		    			<td colspan="12" class="bor-right" align="right">
+		    			<td colspan="13" class="bor-right" align="right">
 		    				<p class="nomarg"><?php echo $vat_percent; ?>% VAT</p>
 		    			</td>
 		    			<td colspan="2" class="bor-right" align="center"><b></b></td>
@@ -342,7 +342,7 @@
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
-		    			<td colspan="12" class="bor-right" align="right">
+		    			<td colspan="13" class="bor-right" align="right">
 		    				<p class="nomarg">Less: Discount</p>
 		    			</td>
 		    			<td colspan="2" class="bor-right" align="center"><b></b></td>
@@ -354,7 +354,7 @@
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
-		    			<td colspan="12" class="bor-right" align="right">
+		    			<td colspan="13" class="bor-right" align="right">
 		    				<p class="nomarg">Shipping Cost</p>
 		    			</td>
 		    			<td colspan="2" class="bor-right" align="center"><b></b></td>
@@ -365,7 +365,7 @@
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
-		    			<td colspan="12" class="bor-right" align="right">
+		    			<td colspan="13" class="bor-right" align="right">
 		    				<p class="nomarg">Packing and Handling Fee</p>
 		    			</td>
 		    			<td colspan="2" class="bor-right" align="center"><b></b></td>
@@ -376,7 +376,7 @@
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
-		    			<td colspan="12" class="bor-right" align="right">
+		    			<td colspan="13" class="bor-right" align="right">
 		    				<p class="nomarg"><input name="vat_percent" id="vat_percent" value = "<?php echo $vat_percent; ?>" size="5">% VAT</p>
 		    			</td>
 		    			<td colspan="2" class="bor-right" align="center"><b></b></td>
@@ -387,7 +387,7 @@
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
 		    			<td colspan="" class="bor-right" align="center"><b></b></td>
-		    			<td colspan="12" class="bor-right" align="right">
+		    			<td colspan="13" class="bor-right" align="right">
 		    				<p class="nomarg">Less: Discount</p>
 		    			</td>
 		    			<td colspan="2" class="bor-right" align="center"><b></b></td>
@@ -402,7 +402,7 @@
 		    			<td colspan="" class=" bor-right" align="center"></td>
 		    			<td colspan="" class=" bor-right" align="center"></td>
 		    			<td colspan="" class=" bor-right" align="center"></td>
-		    			<td colspan="12" class=" bor-right" align="center"></td>
+		    			<td colspan="13" class=" bor-right" align="center"></td>
 		    			<td colspan="2" class=" bor-right" align="center"><br></td>
 		    			<td colspan="" class="bor-right v-align"></td>
 		    			<td colspan="2" class=" bor-right" align="center"></td>
@@ -412,7 +412,7 @@
 		    			<td colspan="" class="bor-btm bor-right" align="center"></td>
 		    			<td colspan="" class="bor-btm bor-right" align="center"></td>
 		    			<td colspan="" class="bor-btm bor-right" align="center"></td>
-		    			<td colspan="12" class="bor-btm bor-right" align="left">
+		    			<td colspan="13" class="bor-btm bor-right" align="left">
 	    				<p class="nomarg">
 	    					<!-- <?php if($draft==0){ ?>
 	    					<button type="button" data-toggle="modal" data-target="#addpurp" class="btn btn-xs btn-primary" onclick="" >Add Purpose/ Enduse/ Requestor</button>
@@ -444,7 +444,7 @@
 		    		?> 		
 		    		<input type='hidden' id='orig_amount' value='<?php echo array_sum($gtotal); ?>'>   
 		    		<tr>
-		    			<td colspan="18" class="all-border" align="right"><b class="nomarg">GRAND TOTAL</b></td>
+		    			<td colspan="19" class="all-border" align="right"><b class="nomarg">GRAND TOTAL</b></td>
 					    <td colspan="2" class="all-border" align="right"><b class="nomarg"><span class="pull-left"></span><span id='grandtotal'><?php if($draft==1){ echo number_format($grandtotal,2); } ?></span></b></td>
 		    		</tr>
 		    		<tr>
@@ -487,63 +487,83 @@
 		    		</tr>
 		    		<tr><td colspan="20"><br></td></tr>
 		    	</table>
-		    	<table class="table-borsdered" width="100%" style="border:2px solid #000;border-top: none;">
+		    	<table class="table-bordesred" width="100%" style="border:2px solid #000;border-top: none;">
 		    		<tr>
 		    			<td width="5%"><br></td>
 		    			<td width="5%"><br></td>
+		    			<td width="9%"><br></td>
+		    			<td width="1%"><br></td>
 		    			<td width="5%"><br></td>
 		    			<td width="5%"><br></td>
+		    			<td width="9%"><br></td>
+		    			<td width="1%"><br></td>
 		    			<td width="5%"><br></td>
 		    			<td width="5%"><br></td>
+		    			<td width="9%"><br></td>
+		    			<td width="1%"><br></td>
 		    			<td width="5%"><br></td>
 		    			<td width="5%"><br></td>
-		    			<td width="5%"><br></td>
-		    			<td width="5%"><br></td>
-		    			<td width="5%"><br></td>
-		    			<td width="5%"><br></td>
-		    			<td width="5%"><br></td>
-		    			<td width="5%"><br></td>
-		    			<td width="5%"><br></td>
-		    			<td width="5%"><br></td>
+		    			<td width="9%"><br></td>
+		    			<td width="1%"><br></td>
 		    			<td width="5%"><br></td>
 		    			<td width="5%"><br></td>
 		    			<td width="5%"><br></td>
 		    			<td width="5%"><br></td>
 		    		</tr>
 		    		<tr>
+		    			<!-- <td colspan="1"></td> -->
+		    			<td colspan="3"><b>Prepared by:</b></td>
 		    			<td colspan="1"></td>
-		    			<td colspan="5"><b>Prepared by:</b></td>
+		    			<td colspan="3"><b>Endorsed by:</b></td>
 		    			<td colspan="1"></td>
-		    			<td colspan="6"><b>Reviewed/Checked by:</b></td>
+		    			<td colspan="3"><b>Confirmed by:</b></td>
 		    			<td colspan="1"></td>
-		    			<td colspan="5"><b>Approved by:</b></td>
+		    			<td colspan="3"><b>Recommended by:</b></td>
 		    			<td colspan="1"></td>
+		    			<td colspan="4"><b>Approved by:</b></td>
 		    		</tr>
 		    		<tr>
+		    			<!-- <td colspan="1"></td> -->
+		    			<td colspan="3"><b><br></b></td>
 		    			<td colspan="1"></td>
-		    			<td colspan="5"><b><br></b></td>
+		    			<td colspan="3"><b><br></b></td>
 		    			<td colspan="1"></td>
-		    			<td colspan="6"><b></b></td>
+		    			<td colspan="3"><b></b></td>
 		    			<td colspan="1"></td>
-		    			<td colspan="5"><b></b></td>
+		    			<td colspan="3"><b></b></td>
 		    			<td colspan="1"></td>
+		    			<td colspan="4"><b></b></td>
 		    		</tr>
 		    		<tr>
+		    			<!-- <td colspan="1"></td> -->
+		    			<td colspan="3" class="bor-btm"><b><br></b></td>
 		    			<td colspan="1"></td>
-		    			<td colspan="5" class="bor-btm"><b><br></b></td>
+		    			<td colspan="3" class="bor-btm"><b><br></b></td>
 		    			<td colspan="1"></td>
-		    			<td colspan="6" class="bor-btm"><b><br></b></td>
+		    			<td colspan="3" class="bor-btm"><b><br></b></td>
 		    			<td colspan="1"></td>
-		    			<td colspan="5" class="bor-btm"><b><br></b></td>
+		    			<td colspan="3" class="bor-btm"><b><br></b></td>
 		    			<td colspan="1"></td>
+		    			<td colspan="4" class="bor-btm"><b><br></b></td>
 		    		</tr>
 		    		<tr>
-		    			<td colspan="1"></td>
-		    			<td colspan="5" class=""><b><?php echo $prepared; ?></b></td>
-		    			<td colspan="1"></td>
-		    			<td colspan="6" class=""><b>
-			    			<?php if($draft==0){ ?>
-			    			<select name='checked' class="select-des emphasis" style="width: 100%" required>
+		    			<!-- <td colspan="1"></td> -->
+		    			<td style="vertical-align: top;font-size: 11px" colspan="3" class=""><b><?php echo $prepared; ?></b></td>
+		    			<td style="vertical-align: top;font-size: 11px" colspan="1"></td>
+		    			<td style="vertical-align: top;font-size: 11px" colspan="3" class=""><b>
+			    			<?php if($saved==0){ ?>
+			    			<select name='endorsed' class="select-des emphasis" style="width: 100%" >
+				    			<option value=''>-Select-</option>
+				    			<?php foreach($employee AS $emp){ ?>
+				    			<option value='<?php echo $emp->employee_id; ?>'><?php echo $emp->employee_name; ?></option>
+				    			<?php } ?>
+			    			</select></b></td>
+			    			<?php }else { ?>
+			    			<?php echo $endorsed; } ?>
+		    			<td style="vertical-align: top;font-size: 11px" colspan="1"></td>
+		    			<td style="vertical-align: top;font-size: 11px" colspan="3" class=""><b>
+			    			<?php if($saved==0){ ?>
+			    			<select name='checked' class="select-des emphasis" style="width: 100%" >
 				    			<option value=''>-Select-</option>
 				    			<?php foreach($employee AS $emp){ ?>
 				    			<option value='<?php echo $emp->employee_id; ?>'><?php echo $emp->employee_name; ?></option>
@@ -551,9 +571,20 @@
 			    			</select></b></td>
 			    			<?php }else { ?>
 			    			<?php echo $checked; } ?>
-		    			<td colspan="1"></td>
-		    			<td colspan="5" class=""><b>
-			    			<?php if($draft==0){ ?>
+			    		<td style="vertical-align: top;font-size: 11px" colspan="1"></td>
+		    			<td style="vertical-align: top;font-size: 11px" colspan="3" class=""><b>
+			    			<?php if($saved==0){ ?>
+			    			<select name='recommended' class="select-des emphasis" style="width: 100%" >
+				    			<option value=''>-Select-</option>
+				    			<?php foreach($employee AS $emp){ ?>
+				    			<option value='<?php echo $emp->employee_id; ?>'><?php echo $emp->employee_name; ?></option>
+				    			<?php } ?>
+			    			</select></b></td>
+			    			<?php }else { ?>
+			    			<?php echo $recommended; } ?>
+		    			<td style="vertical-align: top;font-size: 11px" colspan="1"></td>
+		    			<td style="vertical-align: top;font-size: 11px" colspan="4" class=""><b>
+			    			<?php if($saved==0){ ?>
 			    			<select name='approved' class="select-des emphasis" style="width: 100%" required>
 				    			<option value=''>-Select-</option>
 				    			<?php foreach($employee AS $emp){ ?>
@@ -562,7 +593,6 @@
 			    			</select></b></td>
 			    			<?php }else { ?>
 			    			<?php echo $approved; } ?>
-		    			<td colspan="1"></td>
 		    		</tr>
 		    		<tr><td colspan="20"><br></td></tr>
 		    		<tr>
@@ -579,7 +609,7 @@
 		    		</tr>
 		    		<tr><td colspan="20"><br></td></tr>
 		    		<tr><td colspan="20"><br></td></tr>
-		    	</table>	    
+		    	</table>		    
 	    	</div>
 	    	<input type='hidden' name='po_id' value='<?php echo $po_id; ?>'>
 	    	<input type='hidden' name='pr_id' value='<?php echo $pr_id; ?>'>
