@@ -391,7 +391,7 @@
 					    		</tr>
 					    		<tr>
 					    			<td class="f13" colspan="3" align="center">
-					    				<?php echo $prepared; ?>
+					    				<?php echo $verified_by; ?>
 					    			</td>
 					    		</tr>
 					    	</table>	

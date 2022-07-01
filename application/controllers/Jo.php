@@ -503,6 +503,7 @@ class Jo extends CI_Controller {
             $data['phone'] = $this->super_model->select_column_where('vendor_head', 'phone_number', 'vendor_id', $headtemp->vendor_id);
             $data['fax'] = $this->super_model->select_column_where('vendor_head', 'fax_number', 'vendor_id', $headtemp->vendor_id);
             $data['cenjo_no']= $headtemp->cenpri_jo_no;
+            $data['verified_by']= $headtemp->verified_by;
             $data['jo_no']= $headtemp->jo_no;
             $data['project_title']= $headtemp->project_title;
             $data['date_prepared']= $headtemp->date_prepared;

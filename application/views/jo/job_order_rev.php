@@ -595,7 +595,7 @@
 				    				<select type="text" name="endorsed_by" class="btn-block">
 				    					<option value=''>-Select-</option>
 				    					 <?php foreach($employee AS $emp){ ?>
-		                                    <option value="<?php echo $emp->employee_id; ?>"><?php echo $emp->employee_name; ?></option>
+		                                    <option value="<?php echo $emp->employee_id; ?>" <?php echo ($endorsed_id==$emp->employee_id) ? 'selected' : ''; ?>><?php echo $emp->employee_name; ?></option>
 										<?php } ?> 
 				    				</select>
 				    			</td>
@@ -604,7 +604,7 @@
 				    				<select type="text" name="checked_by" class="btn-block">
 				    					<option value=''>-Select-</option>
 				    					 <?php foreach($employee AS $emp){ ?>
-		                                    <option value="<?php echo $emp->employee_id; ?>"><?php echo $emp->employee_name; ?></option>
+		                                    <option value="<?php echo $emp->employee_id; ?>" <?php echo ($checked_id==$emp->employee_id) ? 'selected' : ''; ?>><?php echo $emp->employee_name; ?></option>
 										<?php } ?> 
 				    				</select>
 				    			</td>
@@ -613,7 +613,7 @@
 				    				<select type="text" name="recommended_by" class="btn-block">
 				    					<option value=''>-Select-</option>
 				    					 <?php foreach($employee AS $emp){ ?>
-		                                    <option value="<?php echo $emp->employee_id; ?>"><?php echo $emp->employee_name; ?></option>
+		                                    <option value="<?php echo $emp->employee_id; ?>" <?php echo ($recommended_id==$emp->employee_id) ? 'selected' : ''; ?>><?php echo $emp->employee_name; ?></option>
 										<?php } ?> 
 				    				</select>
 				    			</td>
@@ -623,7 +623,7 @@
 				    				<select type="text" name="approved_by" class="btn-block">
 				    					<option value=''>-Select-</option>
 				    					 <?php foreach($employee AS $emp){ ?>
-		                                    <option value="<?php echo $emp->employee_id; ?>"><?php echo $emp->employee_name; ?></option>
+		                                    <option value="<?php echo $emp->employee_id; ?>" <?php echo ($approved_id==$emp->employee_id) ? 'selected' : ''; ?>><?php echo $emp->employee_name; ?></option>
 										<?php } ?> 
 				    				</select>
 				    			</td>
@@ -645,7 +645,7 @@
 					    				<select type="text" name="verified_by" class="btn-block">
 					    					<option value=''>-Select-</option>
 					    					 <?php foreach($employee AS $emp){ ?>
-			                                    <option value="<?php echo $emp->employee_id; ?>"><?php echo $emp->employee_name; ?></option>
+			                                    <option value="<?php echo $emp->employee_id; ?>" <?php echo ($verified_by==$emp->employee_id) ? 'selected' : ''; ?>><?php echo $emp->employee_name; ?></option>
 											<?php } ?> 
 					    				</select>
 					    			</td>
