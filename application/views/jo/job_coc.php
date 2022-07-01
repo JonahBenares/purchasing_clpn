@@ -298,92 +298,107 @@
 		    		<tr><td class="f13" colspan="20" align="center"><br></td></tr>    	
 
 		    		<tr>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 " colspan="4" align="center">Prepared by:</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center">Checked by:</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 " colspan="4" align="center">Recommended by:</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 " colspan="3" align="center">Approved by:</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    		</tr>   
-		    		<tr>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13  bor-btm" colspan="4" align="center"><br></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 bor-btm" colspan="4" align="center"><br></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13  bor-btm" colspan="4" align="center"><br></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13  bor-btm" colspan="3" align="center"><br></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    		</tr>   
-		    		<tr>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center">
-		    				<?php echo $prepared; ?>
+		    			<td colspan="20">
+		    				<table class="table-borsdered" width="100%" >
+					    		<tr>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="9%"><br></td>
+					    			<td width="1%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="9%"><br></td>
+					    			<td width="1%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="9%"><br></td>
+					    			<td width="1%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="9%"><br></td>
+					    			<td width="1%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    			<td width="5%"><br></td>
+					    		</tr>
+					    		<tr>
+					    			<td colspan="3"><b>Prepared by:</b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b>Endorsed by:</b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b>Confirmed by:</b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b>Recommended by:</b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="4"><b>Approved by:</b></td>
+					    		</tr>
+					    		<tr>
+					    			<td colspan="3"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3"><b></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="4"><b></b></td>
+					    		</tr>
+					    		<tr>
+					    			<td colspan="3" class="bor-btm"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3" class="bor-btm"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3" class="bor-btm"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="3" class="bor-btm"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    			<td colspan="4" class="bor-btm"><b><br></b></td>
+					    		</tr>
+					    		<tr>
+					    			<td class="f13" colspan="3" align="center">
+					    				<?php echo $prepared; ?>
+					    			</td>
+					    			<td class="f13" colspan="1" align="center"></td>
+					    			<td class="f13" colspan="3" align="center">
+					    				<?php echo $endorsed; ?>
+					    			</td>
+					    			<td class="f13" colspan="1" align="center"></td>
+					    			<td class="f13" colspan="3" align="center">
+					    				<?php echo $checked; ?>
+					    			</td>
+					    			<td class="f13" colspan="1" align="center"></td>
+					    			<td class="f13" colspan="3" align="center">
+					    				<?php echo $recommended; ?>
+					    			</td>
+					    			<td class="f13" colspan="1" align="center"></td>
+					    			<td class="f13" colspan="2" align="center">
+					    				<?php echo $approved;?>
+					    			</td>
+					    		</tr>
+					    		<tr><td colspan="20"><br></td></tr>
+					    		<tr><td colspan="20"><br></td></tr>
+					    		<tr>
+					    			<td colspan="4"><b>Work Completion Verified by:</b></td>
+					    		</tr>
+					    		<tr>
+					    			<td colspan="3"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    		</tr>
+					    		<tr>
+					    			<td colspan="3" class="bor-btm"><b><br></b></td>
+					    			<td colspan="1"></td>
+					    		</tr>
+					    		<tr>
+					    			<td class="f13" colspan="3" align="center">
+					    				<?php echo $prepared; ?>
+					    			</td>
+					    		</tr>
+					    	</table>	
 		    			</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center">
-		    				<?php echo $checked; ?>
-		    			</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center">
-		    				<?php echo $recommended; ?>
-		    			</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="3" align="center">
-		    				<?php echo $approved;?>
-		    			</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    		</tr> 
-		    		<!-- <tr>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="5" align="center"><small>Purchasing Department</small></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="6" align="center"><small>Personnel</small></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="5" align="center"><small>Project Director</small></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    		</tr>   -->
-		    		<tr><td class="f13" colspan="20" align="center"><br></td></tr>    	
-		    		<tr>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 " colspan="4" align="center">Work Completion Verified by:</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center"></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 " colspan="4" align="center"></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 " colspan="4" align="center"></td>
-		    		</tr>   
-		    		<tr>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13  bor-btm" colspan="4" align="center"><br></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center"><br></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center"><br></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center"><br></td>
-		    		</tr>   
-		    		<tr>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center">
-		    				<?php echo $verified_by;?>
-		    			</td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="4" align="center"></td>
-		    			<td class="f13" colspan="1" align="center"></td></td>
-
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13" colspan="3" align="center"></td>
-		    			<td class="f13" colspan="1" align="center"></td>
-		    			<td class="f13 " colspan="4" align="center"></td>
-		    		</tr>     	
+		    		</tr>
 		    		<tr><td class="f13" colspan="20" align="center"><br></td></tr>
-		    		<tr><td class="f13" colspan="20" align="center"><br><br></td></tr>  
+		    		<tr><td class="f13" colspan="20" align="center"><br></td></tr>
 		    		
 		    	</table>		    
 	    	</div>
