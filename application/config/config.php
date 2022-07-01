@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://Purchasing-CLPN/purchasing_cpgc';
-$config['base_url'] = 'http://localhost/purchasing_cpgc_edited';
+$config['base_url'] = 'http://localhost/purchasing_clpn';
 
 /*	
 |--------------------------------------------------------------------------
