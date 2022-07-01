@@ -464,7 +464,7 @@
 					    			<td colspan="1"></td>
 					    			<td colspan="3"><b>Endorsed by:</b></td>
 					    			<td colspan="1"></td>
-					    			<td colspan="3"><b>Confirmed by:</b></td>
+					    			<td colspan="3"><b>Cleared by:</b></td>
 					    			<td colspan="1"></td>
 					    			<td colspan="3"><b>Recommended by:</b></td>
 					    			<td colspan="1"></td>
