@@ -586,6 +586,7 @@ class Jo extends CI_Controller {
             $data['conforme']= $head->conforme;
             $data['verified_by']=$this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $head->verified_by);
             $data['checked'] = $this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $head->checked_by);
+            $data['endorsed'] = $this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $head->endorsed_by);
             $data['approved'] = $this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $head->approved_by);
             $data['recommended'] = $this->super_model->select_column_where('employees', 'employee_name', 'employee_id', $head->recommended_by);
             $data['prepared'] = $this->super_model->select_column_where('users', 'fullname', 'user_id', $head->prepared_by);
