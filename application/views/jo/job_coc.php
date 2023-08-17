@@ -376,6 +376,7 @@
 					    				<?php echo $approved;?>
 					    			</td>
 					    		</tr>
+								
 					    		<tr><td colspan="20"><br></td></tr>
 					    		<tr><td colspan="20"><br></td></tr>
 					    		<tr>
@@ -394,6 +395,7 @@
 					    				<?php echo $verified_by; ?>
 					    			</td>
 					    		</tr>
+								
 					    	</table>	
 		    			</td>
 		    		</tr>

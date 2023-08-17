@@ -375,6 +375,9 @@
 					    				<?php echo $approved;?>
 					    			</td>
 					    		</tr>
+								<?php
+								
+								if($grand_total <= 10000){ ?>
 					    		<tr><td colspan="20"><br></td></tr>
 					    		<tr><td colspan="20"><br></td></tr>
 					    		<tr>
@@ -393,6 +396,7 @@
 					    				<?php echo $verified_by; ?>
 					    			</td>
 					    		</tr>
+								<?php } ?>
 					    	</table>	
 		    			</td>
 		    		</tr>
